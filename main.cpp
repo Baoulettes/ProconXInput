@@ -87,10 +87,13 @@ int main(int, char*[]) {
 	}
 
 #ifndef NO_CERBERUS
+	RestartGamePad: //Dirty method so you do not have to exit your game to re-set your gamepad !
 	Cerberus cerb;
 	try {
 		cerb.init();
 		cout << "Initialized HidCerberus.\n";
+		Sleep(500);//Made a tiny delay to prevent much flood not so wow.
+
 	}
 	catch (CerberusError &e) {
 		cout << "Unable to initialize Cerberus.\n";
@@ -115,7 +118,8 @@ int main(int, char*[]) {
 					}
 					catch (ControllerException &e) {
 						cout << "Exception connecting to controller: " << e.what() << '\n';
-						return -1;
+						//return -1; //Currently not using it but keeping in case later you know method does not work. this goes for all return -1 :)
+						goto RestartGamePad;
 					}
 				}
 				iter = iter->next;
@@ -125,7 +129,8 @@ int main(int, char*[]) {
 	}
 	if (cs.size() == 0) {
 		cout << "Unable to find controller.\n";
-		return -1;
+		//return -1;
+		goto RestartGamePad;
 	}
 
 	cout << "\nConnected to " << static_cast<int>(port) << " controller(s). Beginning xInput emulation.\n\n";
@@ -170,7 +175,8 @@ int main(int, char*[]) {
 	}
 	catch (ControllerException &e) {
 		cout << "ControllerException: " << e.what() << '\n';
-		return -1;
+		//return -1;
+		goto RestartGamePad;
 	}
 
 	return 0;

@@ -5,10 +5,12 @@ From there I will modify it a bit to fit my need and maybe it will be nice for y
 
 Change log :
 ============
+
 03/12/2018.
 Added a dirty method for controller search after disconnect.
 
 ============
+
 A Windows-only XInput USB user-mode driver for the Switch Pro Controller using
 hidapi, ScpVBus, and XOutput.
 

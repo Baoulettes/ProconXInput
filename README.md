@@ -1,6 +1,13 @@
 ProconXInput
 ============
-Forked as a place holder, nothing new at all at the moment !
+All sources changement will be based on ProconXinput Version 0.1.0-Alpha3.
+From there I will modify it a bit to fit my need and maybe it will be nice for you too :)
+
+Change log :
+============
+03/12/2018.
+Added a dirty method for controller search after disconnect.
+
 ============
 A Windows-only XInput USB user-mode driver for the Switch Pro Controller using
 hidapi, ScpVBus, and XOutput.

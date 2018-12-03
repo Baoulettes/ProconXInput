@@ -10,6 +10,7 @@ Change log :
 
 Added a dirty method for controller search after disconnect.
 
+Original ReadMe
 ============
 
 A Windows-only XInput USB user-mode driver for the Switch Pro Controller using
